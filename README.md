@@ -5,4 +5,6 @@ There are 2 parsers class CSVFileParser and JsonParser both implements from File
 
 For json file there is no line number output in console.
 
+XLSX parsers could be added by implementing  FileParser
+
 
