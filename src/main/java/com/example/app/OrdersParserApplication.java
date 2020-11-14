@@ -13,7 +13,7 @@ public class OrdersParserApplication {
 	public static void main(String[] args) throws Exception {
 
 		ConfigurableApplicationContext context = SpringApplication.run(OrdersParserApplication.class, args);
-		System.out.println("running application");
+		System.out.println("------- running application -------");
 
 		FileParser cvsFileParser = context.getBean("CSVFileParser", FileParser.class);
 		FileParser jsonFileParser = context.getBean("jsonFileParser", FileParser.class);
@@ -27,7 +27,7 @@ public class OrdersParserApplication {
 				r = new ExtractThread(jsonFileParser, arg);
 			}
 			else {
-				throw new Exception("file " + arg + " is not supported" );
+				throw new RuntimeException("file " + arg + " is not supported" );
 			}
 			new Thread(r).start();
 		}

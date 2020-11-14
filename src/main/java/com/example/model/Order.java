@@ -14,8 +14,6 @@ public class Order {
 		this.amount = amount;
 		this.currency = currency;
 		this.comment = comment;
-		this.fileName = fileName;
-		this.line = line;
 	}
 
 	public long getOrderId() {

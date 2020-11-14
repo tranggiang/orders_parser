@@ -1,7 +1,6 @@
 package com.example.app.service;
 
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -18,19 +17,15 @@ public class CSVFileParser implements FileParser {
 		String[] HEADERS = { "orderId", "amount", "currency", "comment" };
 		int lineNumber = 1;
 		try {
-			Reader reader = Files.newBufferedReader(Paths.get(fileName));
-			CSVParser csvParser = new CSVParser(reader,
-					CSVFormat.DEFAULT.withHeader(HEADERS).withIgnoreHeaderCase().withFirstRecordAsHeader().withTrim());
+			CSVParser csvParser = new CSVParser(Files.newBufferedReader(Paths.get(fileName)),
+					CSVFormat.DEFAULT.withHeader(HEADERS).withFirstRecordAsHeader().withTrim());
 
 			for (CSVRecord csvRecord : csvParser) {
 				lineNumber++;
-				System.out.println(csvRecord.toMap());
-
 				System.out.println("[Id=" + Long.parseLong(csvRecord.get("orderId")) + ", amount="
 						+ Double.parseDouble(csvRecord.get("amount")) + ", currency=" + csvRecord.get("currency")
 						+ ", comment=" + csvRecord.get("comment") + ", fileName=" + fileName + ", line=" + lineNumber
 						+ "]");
-
 			}
 
 		} catch (NumberFormatException e) {
