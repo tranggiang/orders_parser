@@ -1,0 +1,21 @@
+[
+   {
+      "orderId":2,
+      "amount":1.23,
+	   "currency":"USD",
+	   "comment":"order payment"
+   },
+   {
+      "orderId":3,
+      "amount":"300",
+	    "currency":"VND",
+	 "comment":VND order payment
+   },
+   {
+     "orderId":4,
+      "amount":"490",
+	   "currency":"EUR",
+	 "comment":"order payment"
+   }
+
+]
