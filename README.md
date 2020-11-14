@@ -5,6 +5,8 @@ There are 2 parsers class CSVFileParser and JsonParser both implements from File
 
 For json file there is no line number output in console.
 
+If there is error while processing input file there will be message shows line number form input file
+
 XLSX parsers could be added by implementing  FileParser
 
 
