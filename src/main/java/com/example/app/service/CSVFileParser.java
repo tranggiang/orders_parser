@@ -29,7 +29,7 @@ public class CSVFileParser implements FileParser {
 			}
 
 		} catch (NumberFormatException e) {
-			throw new RuntimeException("fail to parse CSV file " + fileName + " at line number  " + lineNumber + " " + e.getMessage());
+			throw new RuntimeException("fail to parse number " + fileName + " at line number  " + lineNumber + " " + e.getMessage());
 		} catch (IOException e) {
 			throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
 
